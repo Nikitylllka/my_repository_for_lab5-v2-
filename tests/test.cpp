@@ -54,7 +54,7 @@ TEST(Test_for_ex2, my_funny_test2)
     int y = 4;
     int x = 6;
 
-    stack2 <Summa> my_test2;
+    stack2 <int> my_test2;
 
     my_test2.push(z);
     EXPECT_EQ(my_test2.head(), 2);
