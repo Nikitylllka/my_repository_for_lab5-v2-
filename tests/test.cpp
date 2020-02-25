@@ -21,8 +21,30 @@ ostream &operator<<(ostream &s, const Summa &v) {
     return s;
 }
 
-TEST(Example, EmptyTest) {
-EXPECT_TRUE(true);
+TEST(Test_for_ex1, my_funny_test1) {
+    stack<int> my_test1;
+
+int a = 1;
+int b = 2;
+int c = 3;
+//push
+    my_test1.push(a);
+    EXPECT_EQ (my_test1.head(), 1);
+    my_test1.push(b);
+    EXPECT_EQ (my_test1.head(), 2);
+    my_test1.push(c);
+    EXPECT_EQ (my_test1.head(), 3);
+//pop
+    my_test1.pop();
+    EXPECT_EQ (my_test1.head(), 2);
+
+    EXPECT_EQ(std::is_move_constructible<stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_assignable<stack<int>>::value, true);
+
+    my_test1.pop();
+    EXPECT_EQ (my_test1.head(), 1);
+
+    EXPECT_EQ()
 }
 
 int main() {
@@ -66,7 +88,6 @@ int main() {
     cout << " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Zad2" << endl;
 
     stack2<Summa> my_stack2;
-
     my_stack2.push_emplace(123, 1, 1);
     my_stack2.push_emplace(321, 1, 1);
     my_stack2.push_emplace(101, 1, 1);
@@ -82,5 +103,5 @@ int main() {
     my_stack2.pop();
     my_stack2.pop();
 
-    return 0;
+    return RUN_ALL_TESTS();
 }
