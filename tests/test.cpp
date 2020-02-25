@@ -29,22 +29,20 @@ int b = 2;
 int c = 3;
 //push
     my_test1.push(a);
-    EXPECT_EQ (my_test1.head(), 1);
+    EXPECT_EQ(my_test1.head(), 1);
     my_test1.push(b);
-    EXPECT_EQ (my_test1.head(), 2);
+    EXPECT_EQ(my_test1.head(), 2);
     my_test1.push(c);
-    EXPECT_EQ (my_test1.head(), 3);
+    EXPECT_EQ(my_test1.head(), 3);
 //pop
     my_test1.pop();
-    EXPECT_EQ (my_test1.head(), 2);
+    EXPECT_EQ(my_test1.head(), 2);
 
     EXPECT_EQ(std::is_move_constructible<stack<int>>::value, true);
     EXPECT_EQ(std::is_move_assignable<stack<int>>::value, true);
 
     my_test1.pop();
-    EXPECT_EQ (my_test1.head(), 1);
-
-    EXPECT_EQ()
+    EXPECT_EQ(my_test1.head(), 1);
 }
 
 int main() {
