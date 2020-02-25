@@ -43,6 +43,31 @@ int c = 3;
 
     my_test1.pop();
     EXPECT_EQ(my_test1.head(), 1);
+
+    my_test1.push(5);
+    EXPECT_EQ(my_test1.head(), 5);
+}
+
+TEST(Test_for_ex2, my_funny_test2)
+{
+    int z = 2;
+    int y = 4;
+    int x = 6;
+
+    stack2 <Summa> my_test2;
+
+    my_test2.push(z);
+    EXPECT_EQ(my_test2.head(), 2);
+    my_test2.push(y);
+    EXPECT_EQ(my_test2.head(), 4);
+    my_test2.push(8);
+    EXPECT_EQ(my_test2.head(), 8);
+
+    EXPECT_EQ(std::is_move_constructible<stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_assignable<stack<int>>::value, true);
+
+    my_test2.push_emplace(123, 1, 1);
+    EXPECT_EQ(my_test2.head(), 125);
 }
 
 int main(int argc, char **argv) {
