@@ -101,5 +101,6 @@ int main() {
     my_stack2.pop();
     my_stack2.pop();
 
+    ::testing::InitGoogleTest;
     return RUN_ALL_TESTS();
 }
