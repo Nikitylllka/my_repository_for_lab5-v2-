@@ -45,7 +45,7 @@ int c = 3;
     EXPECT_EQ(my_test1.head(), 1);
 }
 
-int main() {
+int main(int argc, char **argv) {
     stack<int> my_stack;
     //Попробовать заменить на шаблон int
 
@@ -101,6 +101,6 @@ int main() {
     my_stack2.pop();
     my_stack2.pop();
 
-    ::testing::InitGoogleTest;
+    ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
